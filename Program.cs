@@ -1,10 +1,4 @@
-﻿//var cheddar = new Cheddar();
-//var ing = new Ingredient();
-//var pizza = new Pizza();
-//pizza.AddIngredients(new Cheddar());
-//Console.WriteLine(pizza.Describe());
-//Ingredient ingredient = new Cheddar();
-//Console.WriteLine(ingredient.Name);
+﻿
 var ingredients = new List<Ingredient>
 {
     new Cheddar(),
@@ -31,7 +25,7 @@ public class Ingredient
     public int PublicField;
     public string PublicMethod() => "This method is public in Ingredients class";
     private string PrivateMethod() => "This method is private in Ingredients class";
-    protected string ProtectedMethod() => "This method is prothected in Ingredients class";
+    protected string ProtectedMethod() => "This method is protected in Ingredients class";
 }
 public class Cheddar : Ingredient
 {
@@ -39,14 +33,14 @@ public class Cheddar : Ingredient
     public int AgedInMonths { get; }
     public void UseMethodFromBaseClass()
     {
-        //Console.WriteLine(PrivateMethod());
+        
         Console.WriteLine(PublicMethod());
         Console.WriteLine(ProtectedMethod());
     }
 }
 public class TomatoSauce : Ingredient
 {
-    public string Name => "Tomato sauce";
+    public override string Name => "Tomato sauce";
     public int TomatosIn100Grams { get; }
 }
 public class Mozzarella : Ingredient
